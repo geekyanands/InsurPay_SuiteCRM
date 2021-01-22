@@ -1,20 +1,21 @@
 <?php
 //edited in git as a master
+
+//edited for Second branch
 //edited in branch, not for master
 
 //edited again in branch
 class rls_Payment_MasterHookAfterSave extends SugarBean {
 	function createNewUser(SugarBean $bean, $event, $arguments) {
 		$GLOBALS ['log']->fatal ( 'Inside' );
-		$config = new Configurator ();
-		$config->loadConfig ();
+		//this lines removed
 		$trigger_success_mail = $config->config ['trigger_success_mail'];
 		$send_success_payment_email = $config->config ['send_payment_success_email'];
 		$send_success_ach_payment = $config->config ['send_payment_success_email_to_vendor'];
 		$callTowebservices = true;
 		$batch_enable = $config->config ['fax_batch_enabled'];
 		$send_success_ach_payment_notification = $config->config ['send_payment_success_email_to_vendor'];
-		
+		//new one added
 		$payment_mode_details = new rls_Payment_Mode_Details ();
 		
 		$payment_mode_details->retrieve ( trim ( $bean->payment_mode_id ) );
