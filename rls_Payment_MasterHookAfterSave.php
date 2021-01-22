@@ -1,5 +1,6 @@
 <?php
 //edited in git as a master
+//edited in branch, not for master
 class rls_Payment_MasterHookAfterSave extends SugarBean {
 	function createNewUser(SugarBean $bean, $event, $arguments) {
 		$GLOBALS ['log']->fatal ( 'Inside' );
